@@ -14,3 +14,8 @@ class Ubicacion(models.Model):
     updated = models.DateTimeField(auto_now=True)
     #Lugar fisico en donde se encuentra el clilindro
     #patio planta, proceso planta, proceso externo, taller, cliente
+
+
+class nacionalidades(models.Model):
+    nombre = models.CharField(max_length=30)
+    lugarturistico = models.CharField(max_length=30)
