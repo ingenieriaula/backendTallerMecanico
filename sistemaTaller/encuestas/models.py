@@ -19,3 +19,9 @@ class Ubicacion(models.Model):
 class nacionalidades(models.Model):
     nombre = models.CharField(max_length=30)
     lugarturistico = models.CharField(max_length=30)
+
+class ciudades(models.Model):
+    nombre = models.CharField(max_length=30)
+    region = models.CharField(max_length=30)
+
+    
