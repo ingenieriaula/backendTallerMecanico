@@ -5,6 +5,14 @@ class Persona (models.Model):
     apellido = models.CharField(max_length=30)
     edad = models.CharField(max_length=30)
 
+
+class Ciudad(models.Model):
+    nombre = models.CharField(max_length=255)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+
 class Ubicacion(models.Model):
     nombre = models.CharField(max_length=255)
     is_inventariable  = models.BooleanField(default=True)
@@ -14,3 +22,11 @@ class Ubicacion(models.Model):
     updated = models.DateTimeField(auto_now=True)
     #Lugar fisico en donde se encuentra el clilindro
     #patio planta, proceso planta, proceso externo, taller, cliente
+
+
+class Cliente(models.Model):
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE)
+    limite_credido = models.IntegerField()
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
