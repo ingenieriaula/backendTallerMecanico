@@ -20,8 +20,7 @@ class Ubicacion(models.Model):
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    #Lugar fisico en donde se encuentra el clilindro
-    #patio planta, proceso planta, proceso externo, taller, cliente
+
 
 
 class Cliente(models.Model):
