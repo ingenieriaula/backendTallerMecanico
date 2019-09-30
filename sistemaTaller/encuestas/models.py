@@ -22,10 +22,12 @@ class Ubicacion(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
 
+class nacionalidades(models.Model):
+    nombre = models.CharField(max_length=30)
+    lugarturistico = models.CharField(max_length=30)
 
-class Cliente(models.Model):
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE)
-    limite_credido = models.IntegerField()
-    is_active = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+class ciudades(models.Model):
+    nombre = models.CharField(max_length=30)
+    region = models.CharField(max_length=30)
+
+    
