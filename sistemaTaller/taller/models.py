@@ -1,18 +1,19 @@
 from django.db import models
 
 # Create your models here.
-class Reserva(models.Model):
-    fechaReserva = models.DateField()
-    horaReserva = models.TimeField()
-    descripcion = models.CharField(max_length=150)
-
 class Cliente (models.Model):
-    reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=30)
     rut = models.CharField(max_length=12)
     telefono = models.IntegerField()
     direccion = models.CharField(max_length=45)
     correo = models.EmailField(max_length=30)
+
+class Reserva(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    tipoReserva = models.CharField(max_length=50)
+    fechaReserva = models.DateField()
+    horaReserva = models.TimeField()
+    descripcion = models.CharField(max_length=150)
 
 class Usuario (models.Model):
     nombre = models.CharField(max_length=50)
